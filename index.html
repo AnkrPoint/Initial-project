@@ -193,12 +193,13 @@
   }
 
   /* ===== Fade-in ===== */
-  .fade-in {
+  /* JS adds .js-fade to <html> on load; without it, elements stay visible */
+  .js-fade .fade-in {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.65s ease, transform 0.65s ease;
   }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .js-fade .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* ===== Hero ===== */
   .hero {
@@ -789,8 +790,9 @@
     });
   })();
 
-  // Scroll fade-in
+  // Scroll fade-in — only hide elements if JS is running
   (function () {
+    document.documentElement.classList.add('js-fade');
     var items = document.querySelectorAll('.fade-in');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
