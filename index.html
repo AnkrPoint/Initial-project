@@ -207,14 +207,7 @@
     padding: 112px 0 128px;
     overflow: hidden;
   }
-  .hero-pattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.10;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .hero-content {
+.hero-content {
     position: relative;
     z-index: 1;
     max-width: 720px;
@@ -564,19 +557,7 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero" id="top">
-    <!-- Arc weave pattern background texture at 10% opacity -->
-    <div class="hero-pattern" aria-hidden="true">
-      <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none">
-        <defs>
-          <pattern id="arc-weave" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-            <polygon points="60,5 110,95 10,95" stroke="#F2EDE3" stroke-width="1.5" fill="none"/>
-            <path d="M20 80 Q60 55 100 80" stroke="#74C0C2" stroke-width="1.5" fill="none"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#arc-weave)"/>
-      </svg>
-    </div>
-    <div class="container hero-content">
+      <div class="container hero-content">
       <p class="eyebrow fade-in">Operator-Level Advisory</p>
       <h1 class="fade-in">We build the<br><span>operating system</span><br>your business runs on.</h1>
       <p class="lead fade-in">AnkrPoint installs the structure, accountability, and execution cadence that makes skilled trades businesses scalable — not just better organised.</p>
@@ -692,46 +673,32 @@
       <div class="about-grid">
         <div class="fade-in" aria-hidden="true">
           <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:var(--radius-card);display:block;">
-            <!-- Background -->
             <rect width="480" height="360" fill="#0D2B3E" rx="12"/>
-            <!-- Subtle grid lines -->
             <line x1="160" y1="0" x2="160" y2="360" stroke="#1E4F6A" stroke-width="1"/>
             <line x1="320" y1="0" x2="320" y2="360" stroke="#1E4F6A" stroke-width="1"/>
             <line x1="0" y1="120" x2="480" y2="120" stroke="#1E4F6A" stroke-width="1"/>
             <line x1="0" y1="240" x2="480" y2="240" stroke="#1E4F6A" stroke-width="1"/>
-            <!-- Large mark, centered, cream -->
             <g transform="translate(168, 54) scale(1.44)">
-              <path fill-rule="evenodd" fill="#F2EDE3" opacity="0.12"
-                d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
-              <path fill="#74C0C2" opacity="0.18"
-                d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
+              <path fill-rule="evenodd" fill="#F2EDE3" opacity="0.12" d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
+              <path fill="#74C0C2" opacity="0.18" d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
             </g>
-            <!-- Aqua arc — decorative, full width -->
             <path d="M0,200 Q240,300 480,200" stroke="#74C0C2" stroke-width="2" fill="none" opacity="0.35"/>
             <path d="M0,215 Q240,315 480,215" stroke="#74C0C2" stroke-width="1" fill="none" opacity="0.18"/>
-            <!-- Stat blocks -->
             <rect x="48" y="96" width="120" height="80" rx="8" fill="#1E4F6A"/>
-            <text x="108" y="130" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">2–20</text>
-            <text x="108" y="155" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">TEAM SIZE</text>
-
+            <text x="108" y="130" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="28" fill="#74C0C2">2-20</text>
+            <text x="108" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7A9AAF">TEAM SIZE</text>
             <rect x="312" y="96" width="120" height="80" rx="8" fill="#1E4F6A"/>
-            <text x="372" y="130" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">90d</text>
-            <text x="372" y="155" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">INSTALL CYCLE</text>
-
+            <text x="372" y="130" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="28" fill="#74C0C2">90d</text>
+            <text x="372" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7A9AAF">INSTALL CYCLE</text>
             <rect x="48" y="204" width="120" height="80" rx="8" fill="#1E4F6A"/>
-            <text x="108" y="238" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">4</text>
-            <text x="108" y="263" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">CORE SYSTEMS</text>
-
+            <text x="108" y="238" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="28" fill="#74C0C2">4</text>
+            <text x="108" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7A9AAF">CORE SYSTEMS</text>
             <rect x="312" y="204" width="120" height="80" rx="8" fill="#1E4F6A"/>
-            <text x="372" y="238" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">100%</text>
-            <text x="372" y="263" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">OPERATOR-LED</text>
-
-            <!-- Center mark small -->
+            <text x="372" y="238" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="28" fill="#74C0C2">100%</text>
+            <text x="372" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7A9AAF">OPERATOR-LED</text>
             <g transform="translate(219, 148) scale(0.86)">
-              <path fill-rule="evenodd" fill="#F2EDE3"
-                d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
-              <path fill="#74C0C2"
-                d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
+              <path fill-rule="evenodd" fill="#F2EDE3" d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
+              <path fill="#74C0C2" d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
               <path fill="#74C0C2" d="M47,61 L53,61 L50,69 Z"/>
             </g>
           </svg>
