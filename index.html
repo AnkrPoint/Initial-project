@@ -3,37 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnkrPoint Consulting — Strategy That Holds</title>
-<!-- trigger redeploy -->
-
-<meta name="description" content="AnkrPoint Consulting partners with leaders to deliver grounded strategy, operations, growth, and risk advisory.">
+<title>AnkrPoint Consulting — We Build the Operating System Your Business Runs On</title>
+<meta name="description" content="AnkrPoint Consulting installs operating systems that make businesses scalable. Strategy, operations, structure, and accountability for skilled trades and niche market businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --color-navy: #1A2B4A;
-    --color-steel: #3D5A80;
-    --color-anchor: #C9A84C;
-    --color-off-white: #F7F6F2;
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Brand colors — AnkrPoint Visual Identity Guidelines V1-B */
+    --color-navy:      #0D2B3E; /* Primary — 60% */
+    --color-navy-600:  #1E4F6A;
+    --color-navy-900:  #071D2B;
+    --color-aqua:      #74C0C2; /* Secondary — 10% */
+    --color-aqua-600:  #56A8AA;
+    --color-aqua-700:  #3A8E90;
+    --color-cream:     #F2EDE3; /* Neutral — 30% */
+    --color-cream-100: #FAF8F4;
+    --color-cream-400: #C8C3B8;
+    --color-cream-600: #7A756B;
+    --color-cream-800: #3A3530;
+    --color-gold:      #C9A84C; /* Premium accent only */
+
+    /* Typography — Metropolis not available on Google Fonts; DM Sans is the approved fallback */
+    --font-primary: 'DM Sans', system-ui, sans-serif;
+    --font-editorial: 'Libre Baskerville', Georgia, serif;
+
     --max-width: 1140px;
+    --radius-btn: 6px;
+    --radius-card: 12px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--font-body);
-    color: var(--color-navy);
-    background: var(--color-off-white);
-    line-height: 1.6;
+    font-family: var(--font-editorial);
+    color: var(--color-cream-800);
+    background: var(--color-cream);
+    line-height: 1.7;
+    font-size: 16px;
   }
 
   img, svg { max-width: 100%; display: block; }
-
   a { color: inherit; text-decoration: none; }
 
   .container {
@@ -42,82 +53,109 @@
     padding: 0 24px;
   }
 
-  h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; font-weight: 700; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    line-height: 1.15;
+    color: var(--color-navy);
+  }
+
+  .eyebrow {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-aqua-700);
+    margin-bottom: 12px;
+  }
+
+  /* ===== Skip link ===== */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-navy);
+    color: var(--color-cream);
+    padding: 10px 16px;
+    z-index: 200;
+    font-family: var(--font-primary);
+  }
+  .skip-link:focus { left: 8px; top: 8px; }
+
+  /* ===== Buttons ===== */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: var(--radius-btn);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary {
+    background: var(--color-navy);
+    color: var(--color-cream);
+  }
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background: var(--color-navy-600);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(13,43,62,0.25);
+  }
+  .btn-aqua {
+    background: var(--color-aqua);
+    color: var(--color-navy);
+  }
+  .btn-aqua:hover, .btn-aqua:focus-visible {
+    background: var(--color-aqua-600);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(116,192,194,0.35);
+  }
 
   /* ===== Navigation ===== */
   header.site-nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(247, 246, 242, 0.95);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(26, 43, 74, 0.1);
+    background: rgba(242, 237, 227, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-cream-400);
   }
-
   .nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
-
   .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: var(--font-display);
+    font-family: var(--font-primary);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--color-navy);
+    letter-spacing: -0.01em;
   }
+  .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+  .logo-ankr { color: var(--color-navy); }
+  .logo-point { color: var(--color-aqua-700); }
 
-  .logo svg { width: 28px; height: 28px; }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
+  .nav-links { display: none; gap: 32px; list-style: none; }
+  @media (min-width: 768px) { .nav-links { display: flex; } }
   .nav-links a {
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-  }
-
-  .nav-links a:hover, .nav-links a:focus-visible { color: var(--color-steel); }
-
-  .btn {
-    display: inline-block;
-    font-family: var(--font-body);
+    font-family: var(--font-primary);
     font-weight: 600;
-    font-size: 0.95rem;
-    padding: 12px 24px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    color: var(--color-cream-800);
+    transition: color 0.2s;
   }
-
-  .btn-primary {
-    background: var(--color-navy);
-    color: var(--color-off-white);
-  }
-
-  .btn-primary:hover, .btn-primary:focus-visible {
-    background: var(--color-steel);
-    transform: translateY(-1px);
-  }
-
-  .btn-accent {
-    background: var(--color-anchor);
-    color: var(--color-navy);
-  }
-
-  .btn-accent:hover, .btn-accent:focus-visible {
-    box-shadow: 0 4px 14px rgba(201, 168, 76, 0.4);
-    transform: translateY(-1px);
-  }
+  .nav-links a:hover { color: var(--color-aqua-700); }
 
   .nav-cta { display: none; }
   @media (min-width: 768px) { .nav-cta { display: inline-block; } }
@@ -128,14 +166,10 @@
     border: none;
     cursor: pointer;
     padding: 6px;
+    color: var(--color-navy);
   }
-  .mobile-toggle svg { width: 28px; height: 28px; }
-  @media (min-width: 768px) {
-    .mobile-toggle { display: none; }
-    .nav-links { display: flex; }
-  }
-  .nav-links { display: none; }
-  @media (min-width: 768px) { .nav-links { display: flex; } }
+  .mobile-toggle svg { width: 26px; height: 26px; }
+  @media (min-width: 768px) { .mobile-toggle { display: none; } }
 
   .nav-links.open {
     display: flex;
@@ -144,143 +178,214 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--color-off-white);
+    background: var(--color-cream);
     padding: 20px 24px;
     gap: 16px;
-    border-bottom: 1px solid rgba(26,43,74,0.1);
+    border-bottom: 1px solid var(--color-cream-400);
   }
+
+  /* ===== Fade-in ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* ===== Hero ===== */
   .hero {
     position: relative;
-    padding: 100px 24px 120px;
-    background: linear-gradient(180deg, var(--color-off-white) 0%, #ECE9E1 100%);
+    background: var(--color-navy);
+    padding: 112px 0 128px;
     overflow: hidden;
   }
-
-  .hero-watermark {
+  .hero-pattern {
     position: absolute;
-    right: -60px;
-    top: -40px;
-    width: 480px;
-    opacity: 0.06;
-    z-index: 0;
+    inset: 0;
+    opacity: 0.10;
     pointer-events: none;
+    overflow: hidden;
   }
-
   .hero-content {
-    max-width: 720px;
     position: relative;
     z-index: 1;
+    max-width: 720px;
   }
-
+  .hero .eyebrow { color: var(--color-aqua); }
   .hero h1 {
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
-    color: var(--color-navy);
-    margin-bottom: 20px;
+    font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+    color: var(--color-cream);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 24px;
   }
-
+  .hero h1 span { color: var(--color-aqua); }
   .hero p.lead {
-    font-size: 1.15rem;
-    color: var(--color-steel);
-    max-width: 560px;
-    margin-bottom: 36px;
+    font-family: var(--font-editorial);
+    font-size: 1.1rem;
+    color: var(--color-cream-400);
+    max-width: 540px;
+    margin-bottom: 40px;
+    line-height: 1.7;
   }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 
   /* ===== Section generic ===== */
   section { padding: 96px 0; }
-  .section-title {
-    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-    text-align: center;
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-header h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.005em;
     margin-bottom: 12px;
   }
-  .section-subtitle {
-    text-align: center;
-    color: var(--color-steel);
-    max-width: 560px;
-    margin: 0 auto 56px;
+  .section-header p {
+    font-family: var(--font-editorial);
+    color: var(--color-cream-600);
+    max-width: 520px;
+    margin: 0 auto;
     font-size: 1.05rem;
   }
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   /* ===== Services ===== */
+  .services-section { background: var(--color-cream-100); }
   .services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
   @media (min-width: 640px) { .services-grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
 
   .service-card {
-    background: #fff;
-    border: 1px solid rgba(26,43,74,0.08);
-    border-radius: 8px;
+    background: var(--color-cream);
+    border: 1px solid var(--color-cream-400);
+    border-radius: var(--radius-card);
     padding: 32px 28px;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   }
-
   .service-card:hover {
-    box-shadow: 0 12px 28px rgba(26, 43, 74, 0.12);
+    box-shadow: 0 16px 40px rgba(13,43,62,0.10);
     transform: translateY(-4px);
+    border-color: var(--color-aqua);
   }
-
   .service-icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 20px;
-    color: var(--color-anchor);
+    color: var(--color-aqua-700);
+    stroke-width: 1.5;
   }
-
   .service-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
     margin-bottom: 10px;
     color: var(--color-navy);
   }
-
-  .service-card p { color: var(--color-steel); font-size: 0.95rem; }
+  .service-card p {
+    font-family: var(--font-editorial);
+    color: var(--color-cream-600);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 
   /* ===== Why AnkrPoint ===== */
-  .why-section { background: var(--color-navy); color: var(--color-off-white); }
-  .why-section .section-title, .why-section .section-subtitle { color: var(--color-off-white); }
-  .why-section .section-subtitle { opacity: 0.75; }
+  .why-section { background: var(--color-navy); }
+  .why-section .section-header h2 { color: var(--color-cream); }
+  .why-section .section-header p { color: var(--color-cream-400); }
+  .why-section .eyebrow { color: var(--color-aqua); }
 
   .pillars-grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 768px) { .pillars-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .pillar { padding: 0 8px; }
+  .pillar-number {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-aqua);
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+  .pillar h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+  }
+  .pillar p {
+    font-family: var(--font-editorial);
+    color: var(--color-cream-400);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  /* ===== Before / After ===== */
+  .transform-section { background: var(--color-cream-100); }
+  .transform-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
   }
-  @media (min-width: 768px) { .pillars-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 640px) { .transform-grid { grid-template-columns: 1fr 1fr; } }
 
-  .pillar {
-    text-align: center;
-    padding: 0 12px;
+  .transform-col {
+    border-radius: var(--radius-card);
+    padding: 32px 28px;
   }
-
-  .pillar .pillar-number {
-    font-family: var(--font-display);
-    font-size: 2.4rem;
-    color: var(--color-anchor);
-    margin-bottom: 12px;
+  .transform-col.before {
+    background: var(--color-cream);
+    border: 1px solid var(--color-cream-400);
   }
-
-  .pillar h3 { font-size: 1.15rem; margin-bottom: 10px; }
-  .pillar p { opacity: 0.8; font-size: 0.95rem; }
+  .transform-col.after {
+    background: var(--color-navy);
+    color: var(--color-cream);
+  }
+  .transform-col h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .transform-col.before h3 { color: var(--color-cream-600); }
+  .transform-col.after h3 { color: var(--color-aqua); }
+  .transform-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .transform-col li {
+    font-family: var(--font-editorial);
+    font-size: 0.95rem;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .transform-col.before li { color: var(--color-cream-600); }
+  .transform-col.after li { color: var(--color-cream-400); }
+  .transform-col li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .transform-col.before li::before { background: var(--color-cream-400); }
+  .transform-col.after li::before { background: var(--color-aqua); }
 
   /* ===== About ===== */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 56px;
     align-items: center;
   }
   @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; } }
@@ -288,121 +393,131 @@
   .about-photo-placeholder {
     width: 100%;
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--color-steel), var(--color-navy));
-    border-radius: 8px;
+    background: linear-gradient(135deg, var(--color-navy-600), var(--color-navy-900));
+    border-radius: var(--radius-card);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(247,246,242,0.7);
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: var(--color-cream-400);
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
-
-  .about-text p { color: var(--color-steel); margin-bottom: 16px; font-size: 1.05rem; }
+  .about-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.005em;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    font-family: var(--font-editorial);
+    color: var(--color-cream-600);
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+  }
+  .about-text p strong { color: var(--color-cream-800); font-weight: 700; }
 
   /* ===== Contact ===== */
-  .contact-section { background: #ECE9E1; }
+  .contact-section { background: var(--color-navy); }
+  .contact-section .section-header h2 { color: var(--color-cream); }
+  .contact-section .section-header p { color: var(--color-cream-400); }
+  .contact-section .eyebrow { color: var(--color-aqua); }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 56px;
   }
-  @media (min-width: 768px) { .contact-grid { grid-template-columns: 1.2fr 1fr; } }
+  @media (min-width: 768px) { .contact-grid { grid-template-columns: 1.4fr 1fr; } }
 
-  form.contact-form { display: flex; flex-direction: column; gap: 18px; }
-
+  form.contact-form { display: flex; flex-direction: column; gap: 16px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
-
-  label { font-size: 0.9rem; font-weight: 600; color: var(--color-navy); }
-
+  label {
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-cream-400);
+    letter-spacing: 0.02em;
+  }
   input, textarea {
-    font-family: var(--font-body);
+    font-family: var(--font-editorial);
     font-size: 1rem;
-    padding: 12px 14px;
-    border: 1px solid rgba(26,43,74,0.25);
-    border-radius: 4px;
-    background: #fff;
-    color: var(--color-navy);
+    padding: 13px 16px;
+    border: 1px solid var(--color-navy-600);
+    border-radius: 8px;
+    background: var(--color-navy-600);
+    color: var(--color-cream);
+    transition: border-color 0.2s, background 0.2s;
   }
-
+  input::placeholder, textarea::placeholder { color: var(--color-cream-600); }
   input:focus, textarea:focus {
-    outline: 2px solid var(--color-steel);
-    outline-offset: 1px;
+    outline: none;
+    border-color: var(--color-aqua);
+    background: #1a4a62;
   }
+  textarea { resize: vertical; min-height: 130px; }
 
-  textarea { resize: vertical; min-height: 120px; }
+  .form-status { font-family: var(--font-primary); font-size: 0.9rem; min-height: 1.2em; margin-top: 2px; }
+  .form-status.success { color: #6fcf97; }
+  .form-status.error { color: #eb5757; }
 
-  .form-status {
-    font-size: 0.9rem;
-    margin-top: 4px;
-    min-height: 1.2em;
+  .contact-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--color-cream);
+    margin-bottom: 16px;
   }
-  .form-status.success { color: #2c6e49; }
-  .form-status.error { color: #a13d3d; }
-
-  .contact-info h3 { margin-bottom: 16px; font-size: 1.2rem; }
-  .contact-info p { color: var(--color-steel); margin-bottom: 8px; }
-  .contact-info a { color: var(--color-navy); font-weight: 600; }
-  .contact-info a:hover { color: var(--color-steel); }
+  .contact-info p {
+    font-family: var(--font-editorial);
+    color: var(--color-cream-400);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .contact-info a { color: var(--color-aqua); font-weight: 600; }
+  .contact-info a:hover { color: var(--color-cream); }
 
   /* ===== Footer ===== */
   footer {
-    background: var(--color-navy);
-    color: var(--color-off-white);
-    padding: 48px 24px 32px;
+    background: var(--color-navy-900);
+    color: var(--color-cream);
+    padding: 48px 0 32px;
   }
-
   .footer-inner {
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
     align-items: center;
     text-align: center;
   }
   @media (min-width: 768px) {
     .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
   }
-
   .footer-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: var(--font-display);
+    font-family: var(--font-primary);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
   }
-  .footer-logo svg { width: 24px; height: 24px; color: var(--color-anchor); }
-
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
+  .footer-logo .logo-mark { width: 24px; height: 24px; }
+  .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; justify-content: center; }
+  .footer-links a {
+    font-family: var(--font-primary);
+    font-size: 0.88rem;
+    color: var(--color-cream-400);
+    transition: color 0.2s;
   }
-  .footer-links a { font-size: 0.9rem; opacity: 0.85; }
-  .footer-links a:hover { opacity: 1; color: var(--color-anchor); }
-
-  .footer-copy { font-size: 0.85rem; opacity: 0.6; }
-
-  .skip-link {
-    position: absolute;
-    left: -999px;
-    top: 0;
-    background: var(--color-navy);
-    color: #fff;
-    padding: 10px 16px;
-    z-index: 200;
-  }
-  .skip-link:focus { left: 8px; top: 8px; }
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px; height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+  .footer-links a:hover { color: var(--color-aqua); }
+  .footer-copy {
+    font-family: var(--font-primary);
+    font-size: 0.82rem;
+    color: var(--color-cream-600);
   }
 </style>
 </head>
@@ -412,27 +527,29 @@
 
 <!-- ===== Navigation ===== -->
 <header class="site-nav">
-  <div class="nav-inner container">
+  <div class="nav-inner">
     <a href="#top" class="logo" aria-label="AnkrPoint Consulting home">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="5" r="2"/>
-        <path d="M12 7v13"/>
-        <path d="M5 12H3a9 9 0 0 0 18 0h-2"/>
-        <path d="M9 9l-2-2M15 9l2-2"/>
+      <!-- Logo mark: A with curved arrows — brand icon -->
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <polygon points="24,4 40,36 8,36" fill="#0D2B3E" stroke="none"/>
+        <polygon points="24,14 34,33 14,33" fill="#F2EDE3" stroke="none"/>
+        <path d="M10 29 Q24 18 38 29" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M10 29 L6 23" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M38 29 L42 23" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
       </svg>
-      AnkrPoint
+      <span><span class="logo-ankr">Ankr</span><span class="logo-point">Point</span></span>
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links" id="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#why">Why AnkrPoint</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <a href="#contact" class="btn btn-primary nav-cta">Get in Touch</a>
     <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
 </header>
@@ -441,44 +558,57 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero" id="top">
-    <svg class="hero-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-navy);">
-      <circle cx="50" cy="18" r="7"/>
-      <path d="M50 25v55"/>
-      <path d="M20 55H8a42 42 0 0 0 84 0H80"/>
-      <path d="M34 38l-12-10M66 38l12-10"/>
-    </svg>
+    <!-- Arc weave pattern background texture at 10% opacity -->
+    <div class="hero-pattern" aria-hidden="true">
+      <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none">
+        <defs>
+          <pattern id="arc-weave" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+            <polygon points="60,5 110,95 10,95" stroke="#F2EDE3" stroke-width="1.5" fill="none"/>
+            <path d="M20 80 Q60 55 100 80" stroke="#74C0C2" stroke-width="1.5" fill="none"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#arc-weave)"/>
+      </svg>
+    </div>
     <div class="container hero-content">
-      <h1 class="fade-in">Strategy That Holds.</h1>
-      <p class="lead fade-in">AnkrPoint Consulting partners with leadership teams to design strategy that survives contact with reality — grounded in evidence, built for resilience, and delivered with precision.</p>
-      <a href="#contact" class="btn btn-accent fade-in">Schedule a Conversation</a>
+      <p class="eyebrow fade-in">Operator-Level Advisory</p>
+      <h1 class="fade-in">We build the<br><span>operating system</span><br>your business runs on.</h1>
+      <p class="lead fade-in">AnkrPoint installs the structure, accountability, and execution cadence that makes skilled trades businesses scalable — not just better organised.</p>
+      <div class="hero-actions fade-in">
+        <a href="#contact" class="btn btn-aqua">Schedule a Conversation</a>
+        <a href="#services" class="btn btn-primary">See What We Do</a>
+      </div>
     </div>
   </section>
 
   <!-- ===== Services ===== -->
-  <section id="services">
+  <section class="services-section" id="services">
     <div class="container">
-      <h2 class="section-title fade-in">Services</h2>
-      <p class="section-subtitle fade-in">Practical advisory across the full arc of strategic decision-making.</p>
+      <div class="section-header">
+        <p class="eyebrow fade-in">What We Install</p>
+        <h2 class="fade-in">Four systems.<br>One operating model.</h2>
+        <p class="fade-in">We don't hand over a deck. We design the machine and install it — then stay until it works.</p>
+      </div>
       <div class="services-grid">
         <div class="service-card fade-in">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>
-          <h3>Strategy &amp; Advisory</h3>
-          <p>Clear-eyed direction for leadership teams navigating complex, high-stakes decisions.</p>
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+          <h3>Structure</h3>
+          <p>Clear organisational architecture — roles, workflows, and operating rhythms that don't collapse under growth pressure.</p>
         </div>
         <div class="service-card fade-in">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          <h3>Operations</h3>
-          <p>Operating model design and execution discipline that turns plans into measurable results.</p>
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+          <h3>Accountability</h3>
+          <p>Every system we install has owners, metrics, and cadences. No more firefighting — a clear line of sight from action to outcome.</p>
         </div>
         <div class="service-card fade-in">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21V9l6-6 6 6v12"/><path d="M9 21V13h6v8"/></svg>
-          <h3>Growth &amp; Transformation</h3>
-          <p>Structured pathways to new markets, models, and capabilities — built to last.</p>
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h3>Visibility</h3>
+          <p>Operators should see how their business runs, where it breaks, and what to fix — in real time, not in hindsight.</p>
         </div>
         <div class="service-card fade-in">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
-          <h3>Risk &amp; Resilience</h3>
-          <p>Identify exposure before it becomes a crisis, and build organizations that withstand shocks.</p>
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>
+          <h3>Execution Cadence</h3>
+          <p>Strategy without cadence is just a plan. We install the rhythm that makes decisions happen on time, every time.</p>
         </div>
       </div>
     </div>
@@ -487,23 +617,64 @@
   <!-- ===== Why AnkrPoint ===== -->
   <section class="why-section" id="why">
     <div class="container">
-      <h2 class="section-title fade-in">Why AnkrPoint</h2>
-      <p class="section-subtitle fade-in">Three principles guide every engagement.</p>
+      <div class="section-header">
+        <p class="eyebrow fade-in">Why AnkrPoint</p>
+        <h2 class="fade-in">Not a consultant.<br>An operator.</h2>
+        <p class="fade-in">We speak like someone who's been inside a real business — not someone presenting from outside.</p>
+      </div>
       <div class="pillars-grid">
         <div class="pillar fade-in">
           <div class="pillar-number">01</div>
-          <h3>Grounded in Evidence</h3>
-          <p>Recommendations are built on rigorous analysis, not assumptions or fashion.</p>
+          <h3>Install, Not Advise</h3>
+          <p>We map how the business actually runs, find the breaks, and build the systems that fix them. We stay until it works.</p>
         </div>
         <div class="pillar fade-in">
           <div class="pillar-number">02</div>
-          <h3>Built to Withstand</h3>
-          <p>We design strategy and operating models that hold up under real-world pressure.</p>
+          <h3>Built for Operators</h3>
+          <p>For skilled trades and niche businesses with 2–20 people who are exceptional at the work but outgrowing their systems.</p>
         </div>
         <div class="pillar fade-in">
           <div class="pillar-number">03</div>
-          <h3>Precision in Delivery</h3>
-          <p>Senior attention, clear communication, and disciplined execution at every stage.</p>
+          <h3>Specific, Not General</h3>
+          <p>Real problems, real roles, real numbers. We name what's broken and describe what fixed looks like — precisely.</p>
+        </div>
+        <div class="pillar fade-in">
+          <div class="pillar-number">04</div>
+          <h3>Stability. Clarity. Progress.</h3>
+          <p>Every design decision, every word, every system must feel like those three things made real. That's the commitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Before / After ===== -->
+  <section class="transform-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow fade-in">The Transformation</p>
+        <h2 class="fade-in">Before → After. Always.</h2>
+        <p class="fade-in">Every engagement anchors in this arc. Show the problem clearly — then show the installed solution.</p>
+      </div>
+      <div class="transform-grid">
+        <div class="transform-col before fade-in">
+          <h3>Before AnkrPoint</h3>
+          <ul>
+            <li>Reactive — putting out fires every day</li>
+            <li>No accountability structure or clear roles</li>
+            <li>Guesswork on job costing and margins</li>
+            <li>Owner is the bottleneck in every decision</li>
+            <li>Growth stalls because the system can't scale</li>
+          </ul>
+        </div>
+        <div class="transform-col after fade-in">
+          <h3>After AnkrPoint</h3>
+          <ul>
+            <li>Systematic — operating on a clear weekly cadence</li>
+            <li>Clear roles, owners, and measurable metrics</li>
+            <li>Job-costing system installed and running</li>
+            <li>Business runs without owner in every room</li>
+            <li>Structure in place to scale without chaos</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -512,14 +683,16 @@
   <!-- ===== About ===== -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title fade-in">About AnkrPoint</h2>
       <div class="about-grid">
-        <div class="about-photo-placeholder fade-in" role="img" aria-label="Placeholder for team photo">
-          Team photo placeholder
+        <div class="about-photo-placeholder fade-in" role="img" aria-label="Team photo — placeholder">
+          Team photo
         </div>
         <div class="about-text fade-in">
-          <p>AnkrPoint Consulting is an independent advisory firm working with leadership teams across strategy, operations, and risk. We bring senior-level rigor to every engagement, without the overhead of a large firm.</p>
-          <p>Our approach is deliberately grounded: fewer assumptions, more evidence, and a relentless focus on recommendations that hold up once implemented.</p>
+          <p class="eyebrow">About AnkrPoint</p>
+          <h2>The operating system of the brand.</h2>
+          <p>AnkrPoint Consulting works with skilled trades operators and niche market businesses to install the structure their business needs to scale — without adding headcount or complexity.</p>
+          <p>We are not a strategy firm. <strong>We are an operator-level partner.</strong> We design the machine, install it, and stay until it runs.</p>
+          <p>Every recommendation is grounded in how the business actually works — not how it looks from the outside.</p>
         </div>
       </div>
     </div>
@@ -528,30 +701,33 @@
   <!-- ===== Contact ===== -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <h2 class="section-title fade-in">Contact</h2>
-      <p class="section-subtitle fade-in">Tell us about your situation — we'll follow up within one business day.</p>
+      <div class="section-header">
+        <p class="eyebrow fade-in">Get in Touch</p>
+        <h2 class="fade-in" style="color: var(--color-cream);">Tell us what's breaking.</h2>
+        <p class="fade-in">We'll follow up within one business day.</p>
+      </div>
       <div class="contact-grid">
         <form class="contact-form fade-in" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-          <!-- Replace action with your live Formspree (or Netlify Forms) endpoint -->
+          <!-- Replace action URL with your live Formspree or Netlify Forms endpoint -->
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required autocomplete="name">
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com">
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message">What's the situation?</label>
+            <textarea id="message" name="message" required placeholder="Describe what's breaking — the more specific, the better."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-aqua">Send Message</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
         <div class="contact-info fade-in">
           <h3>Direct</h3>
-          <p>Email: <a href="mailto:hello@ankrpoint.com">hello@ankrpoint.com</a></p>
-          <p>LinkedIn: <a href="#" rel="noopener">linkedin.com/company/ankrpoint</a></p>
+          <p>Email: <a href="mailto:info@ankrpointconsulting.com">info@ankrpointconsulting.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/company/ankrpoint" target="_blank" rel="noopener">linkedin.com/company/ankrpoint</a></p>
         </div>
       </div>
     </div>
@@ -563,15 +739,19 @@
 <footer>
   <div class="footer-inner">
     <a href="#top" class="footer-logo" aria-label="AnkrPoint Consulting home">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="5" r="2"/><path d="M12 7v13"/><path d="M5 12H3a9 9 0 0 0 18 0h-2"/><path d="M9 9l-2-2M15 9l2-2"/>
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <polygon points="24,4 40,36 8,36" fill="#1E4F6A" stroke="none"/>
+        <polygon points="24,14 34,33 14,33" fill="#F2EDE3" stroke="none"/>
+        <path d="M10 29 Q24 18 38 29" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M10 29 L6 23" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M38 29 L42 23" fill="none" stroke="#74C0C2" stroke-width="3.5" stroke-linecap="round"/>
       </svg>
-      AnkrPoint Consulting
+      <span><span class="logo-ankr">Ankr</span><span class="logo-point" style="color:var(--color-aqua)">Point</span> Consulting</span>
     </a>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="#why">Why AnkrPoint</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="footer-copy">&copy; 2026 AnkrPoint Consulting. All rights reserved.</p>
@@ -585,7 +765,7 @@
     var navLinks = document.getElementById('nav-links');
     toggle.addEventListener('click', function () {
       var isOpen = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
     navLinks.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
@@ -595,7 +775,7 @@
     });
   })();
 
-  // Scroll fade-in reveal
+  // Scroll fade-in
   (function () {
     var items = document.querySelectorAll('.fade-in');
     var observer = new IntersectionObserver(function (entries) {
@@ -605,46 +785,40 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
-    items.forEach(function (item) { observer.observe(item); });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { observer.observe(el); });
   })();
 
-  // Contact form validation + Formspree submission
+  // Contact form — Formspree async submission
   (function () {
     var form = document.getElementById('contact-form');
     var status = document.getElementById('form-status');
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
       if (!form.checkValidity()) {
         status.textContent = 'Please fill in all fields with a valid email address.';
         status.className = 'form-status error';
         return;
       }
-
-      status.textContent = 'Sending...';
+      status.textContent = 'Sending…';
       status.className = 'form-status';
-
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
-      })
-        .then(function (response) {
-          if (response.ok) {
-            status.textContent = 'Thank you — your message has been sent.';
-            status.className = 'form-status success';
-            form.reset();
-          } else {
-            status.textContent = 'Something went wrong. Please email us directly.';
-            status.className = 'form-status error';
-          }
-        })
-        .catch(function () {
+      }).then(function (r) {
+        if (r.ok) {
+          status.textContent = 'Message sent — we’ll be in touch within one business day.';
+          status.className = 'form-status success';
+          form.reset();
+        } else {
           status.textContent = 'Something went wrong. Please email us directly.';
           status.className = 'form-status error';
-        });
+        }
+      }).catch(function () {
+        status.textContent = 'Something went wrong. Please email us directly.';
+        status.className = 'form-status error';
+      });
     });
   })();
 </script>
