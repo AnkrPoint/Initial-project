@@ -690,8 +690,51 @@
   <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-photo-placeholder fade-in" role="img" aria-label="Team photo — placeholder">
-          Team photo
+        <div class="fade-in" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:var(--radius-card);display:block;">
+            <!-- Background -->
+            <rect width="480" height="360" fill="#0D2B3E" rx="12"/>
+            <!-- Subtle grid lines -->
+            <line x1="160" y1="0" x2="160" y2="360" stroke="#1E4F6A" stroke-width="1"/>
+            <line x1="320" y1="0" x2="320" y2="360" stroke="#1E4F6A" stroke-width="1"/>
+            <line x1="0" y1="120" x2="480" y2="120" stroke="#1E4F6A" stroke-width="1"/>
+            <line x1="0" y1="240" x2="480" y2="240" stroke="#1E4F6A" stroke-width="1"/>
+            <!-- Large mark, centered, cream -->
+            <g transform="translate(168, 54) scale(1.44)">
+              <path fill-rule="evenodd" fill="#F2EDE3" opacity="0.12"
+                d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
+              <path fill="#74C0C2" opacity="0.18"
+                d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
+            </g>
+            <!-- Aqua arc — decorative, full width -->
+            <path d="M0,200 Q240,300 480,200" stroke="#74C0C2" stroke-width="2" fill="none" opacity="0.35"/>
+            <path d="M0,215 Q240,315 480,215" stroke="#74C0C2" stroke-width="1" fill="none" opacity="0.18"/>
+            <!-- Stat blocks -->
+            <rect x="48" y="96" width="120" height="80" rx="8" fill="#1E4F6A"/>
+            <text x="108" y="130" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">2–20</text>
+            <text x="108" y="155" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">TEAM SIZE</text>
+
+            <rect x="312" y="96" width="120" height="80" rx="8" fill="#1E4F6A"/>
+            <text x="372" y="130" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">90d</text>
+            <text x="372" y="155" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">INSTALL CYCLE</text>
+
+            <rect x="48" y="204" width="120" height="80" rx="8" fill="#1E4F6A"/>
+            <text x="108" y="238" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">4</text>
+            <text x="108" y="263" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">CORE SYSTEMS</text>
+
+            <rect x="312" y="204" width="120" height="80" rx="8" fill="#1E4F6A"/>
+            <text x="372" y="238" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="28" fill="#74C0C2">100%</text>
+            <text x="372" y="263" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="#7A9AAF" letter-spacing="1">OPERATOR-LED</text>
+
+            <!-- Center mark small -->
+            <g transform="translate(219, 148) scale(0.86)">
+              <path fill-rule="evenodd" fill="#F2EDE3"
+                d="M50,5 L95,78 L68,78 L50,52 L32,78 L5,78 Z M50,18 L66,52 L34,52 Z"/>
+              <path fill="#74C0C2"
+                d="M6,28 L17,48 Q50,72 83,48 L94,28 L79,38 Q50,63 21,38 Z"/>
+              <path fill="#74C0C2" d="M47,61 L53,61 L50,69 Z"/>
+            </g>
+          </svg>
         </div>
         <div class="about-text fade-in">
           <p class="eyebrow">About AnkrPoint</p>
@@ -713,8 +756,7 @@
         <p class="fade-in">We'll follow up within one business day.</p>
       </div>
       <div class="contact-grid">
-        <form class="contact-form fade-in" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-          <!-- Replace action URL with your live Formspree or Netlify Forms endpoint -->
+        <form class="contact-form fade-in" id="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
@@ -794,36 +836,25 @@
     items.forEach(function (el) { observer.observe(el); });
   })();
 
-  // Contact form — Formspree async submission
+  // Contact form — mailto fallback (replace with Formspree fetch when endpoint is ready)
   (function () {
-    var form = document.getElementById('contact-form');
-    var status = document.getElementById('form-status');
-    form.addEventListener('submit', function (e) {
+    var form = document.getElementById(‘contact-form’);
+    var status = document.getElementById(‘form-status’);
+    form.addEventListener(‘submit’, function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
-        status.textContent = 'Please fill in all fields with a valid email address.';
-        status.className = 'form-status error';
+        status.textContent = ‘Please fill in all fields with a valid email address.’;
+        status.className = ‘form-status error’;
         return;
       }
-      status.textContent = 'Sending…';
-      status.className = 'form-status';
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function (r) {
-        if (r.ok) {
-          status.textContent = 'Message sent — we’ll be in touch within one business day.';
-          status.className = 'form-status success';
-          form.reset();
-        } else {
-          status.textContent = 'Something went wrong. Please email us directly.';
-          status.className = 'form-status error';
-        }
-      }).catch(function () {
-        status.textContent = 'Something went wrong. Please email us directly.';
-        status.className = 'form-status error';
-      });
+      var name = form.querySelector(‘[name="name"]’).value.trim();
+      var email = form.querySelector(‘[name="email"]’).value.trim();
+      var message = form.querySelector(‘[name="message"]’).value.trim();
+      var subject = encodeURIComponent(‘AnkrPoint Enquiry from ‘ + name);
+      var body = encodeURIComponent(‘From: ‘ + name + ‘ <’ + email + ‘>\n\n’ + message);
+      window.location.href = ‘mailto:info@ankrpointconsulting.com?subject=’ + subject + ‘&body=’ + body;
+      status.textContent = ‘Opening your email client…’;
+      status.className = ‘form-status success’;
     });
   })();
 </script>
