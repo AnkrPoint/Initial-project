@@ -1,0 +1,58 @@
+<svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AnkrPoint Consulting">
+  <title>AnkrPoint Consulting</title>
+  <!--
+    AnkrPoint Consulting — Full Stacked Lockup
+    Hand-crafted SVG from official brand JPGs.
+    Replace with designer SVG exports when available.
+    Colors: Navy #0D2B3E · Aqua #74C0C2 · Cream #F2EDE3
+    Fonts: DM Sans (approved Metropolis fallback per Visual Identity Guidelines V1-B)
+  -->
+
+  <!-- ── LOGO MARK (scaled 1.8×, centered) ── -->
+  <g transform="translate(80, 10) scale(1.8)">
+    <!-- A shape: wide legs, inner triangle cut via evenodd -->
+    <path fill-rule="evenodd" fill="#0D2B3E" d="
+      M50,5
+      L95,78 L68,78 L50,52 L32,78 L5,78
+      Z
+      M50,18 L66,52 L34,52 Z
+    "/>
+    <!-- Aqua U-arc: lower at center, arrowheads pointing upper-left / upper-right -->
+    <path fill="#74C0C2" d="
+      M6,28
+      L17,48
+      Q50,72 83,48
+      L94,28
+      L79,38
+      Q50,63 21,38
+      Z
+    "/>
+    <!-- Center downward pip -->
+    <path fill="#74C0C2" d="M47,61 L53,61 L50,69 Z"/>
+  </g>
+
+  <!-- ── WORDMARK ── -->
+  <!-- "Ankr" navy · "Point" aqua · DM Sans Bold -->
+  <text
+    x="170" y="244"
+    text-anchor="middle"
+    font-family="'DM Sans', sans-serif"
+    font-weight="700"
+    font-size="66"
+    letter-spacing="-0.5"
+  >
+    <tspan fill="#0D2B3E">Ankr</tspan><tspan fill="#56A8AA">Point</tspan>
+  </text>
+
+  <!-- ── DESCRIPTOR ── -->
+  <!-- "CONSULTING" spaced caps · DM Sans SemiBold -->
+  <text
+    x="170" y="280"
+    text-anchor="middle"
+    font-family="'DM Sans', sans-serif"
+    font-weight="600"
+    font-size="15"
+    letter-spacing="7"
+    fill="#0D2B3E"
+  >CONSULTING</text>
+</svg>
